@@ -1,16 +1,20 @@
 import React from 'react';
-import StarRating from '../RatingsComponents/StarRating';
+import { Link } from 'react-router-dom';
 
-const MidMovieCard = ({ img, title, rating, reviewCount}) => {
+import '../../css/MovieComponents/MidMovieCard.css';
+
+const MidMovieCard = ({ img, title, reviews}) => {
+    let reviewCount = reviews.length;
     return(
-        <article className="mid-movie-card">
-            <img src={img} alt={title} />
-            <div className = "mid-movie-card-info">
-                <StarRating rating={rating}/>
-                <h3>{title}</h3>
-                <p>{reviewCount === 1 ? '1 review' : `${reviewCount} reviews`}</p>
-            </div>
-        </article>
+        <Link to={`/movie/${title}`} className="mid-movie-card-wrapper">
+            <article className="mid-movie-card">
+                <img src={img} alt={title} />
+                <div className = "mid-movie-card-info">
+                    <h3>{title}</h3>
+                    <p>{reviewCount === 1 ? '1 review' : `${reviewCount} reviews`}</p>
+                </div>
+            </article>
+        </Link>
     )
 }
 

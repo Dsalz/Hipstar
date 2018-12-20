@@ -14,7 +14,7 @@ const LandingSection = () => {
              <p>
                  Rate your movie experience on hipstar!
              </p>
-             <Link to="/signup" className="landing-section-cta">
+             <Link to="/signup" className="red-cta-btn">
              Sign Up
              </Link>
           </div>

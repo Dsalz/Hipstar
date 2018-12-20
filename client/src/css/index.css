@@ -14,4 +14,17 @@
 
 body{
     font-family: 'Karla', sans-serif !important;
+    margin: 0;
+}
+
+.red-cta-btn{
+    display: inline-block;
+    background: #ED254E;
+    color: #F0F7F4;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    width: fit-content;
 }
