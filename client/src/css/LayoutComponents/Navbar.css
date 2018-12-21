@@ -1,0 +1,46 @@
+nav.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 92vw;
+    padding: 20px 4vw;
+    display: flex;
+    z-index: 1000;
+}
+
+nav.trans{
+    background: transparent;
+}
+
+nav.trans a{
+    color: #F0F7F4 !important;
+}
+
+nav.trans a:hover{
+    border-bottom: 2px solid #F0F7F4;
+}
+
+.nav-logo{
+    width: 20%;
+    text-align: left;
+}
+
+.nav-logo img{
+    width: 100px;
+    height: 90px;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 80%;
+}
+
+.nav-links a{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 0 15px 10px;
+
+}

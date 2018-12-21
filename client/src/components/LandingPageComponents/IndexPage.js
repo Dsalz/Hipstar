@@ -4,6 +4,7 @@ import React , { Component }from 'react';
 import LandingSection from './LandingSection';
 import RecentlyReviewedMovies from './RecentlyReviewedMovies';
 import Footer from './Footer';
+import Navbar from '../LayoutComponents/Navbar';
 
 class IndexPage extends Component{
     
@@ -19,6 +20,7 @@ class IndexPage extends Component{
         ];
       return(
       <div>
+      <Navbar type='trans'/>
       <LandingSection />
       <RecentlyReviewedMovies movies={movies} />
       <Footer />

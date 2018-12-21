@@ -27,4 +27,11 @@ body{
     text-align: center;
     text-decoration: none;
     width: fit-content;
+    transition: all .3s linear;    
+}
+
+.red-cta-btn:hover{
+    transform: scale(1.05);
+    transition: all .3s linear;
+    box-shadow: 1px 1px 5px 5px rgba(0,0,0,.1);
 }

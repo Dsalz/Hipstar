@@ -12,6 +12,13 @@
     display: flex;
     flex-direction: column;
     height: 500px;
+    transition: all .3s linear;
+}
+
+.mid-movie-card:hover{
+    transform: scale(1.05);
+    transition: all .3s linear;
+    box-shadow: 1px 1px 5px 5px rgba(0,0,0,.1);
 }
 
 .mid-movie-card img{
