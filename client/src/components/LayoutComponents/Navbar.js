@@ -15,8 +15,31 @@ import WhiteLogo from '../../images/hipstar-wh.svg';
 
 class Navbar extends Component {
 
+    componentWillMount(){
+        if (this.props.type === 'trans'){
+            this.setState({
+                type: 'trans'
+            })
+            window.addEventListener('scroll', () => {
+                if(window.scrollY > 30){
+                    this.setState({
+                        type: 'dark'
+                    })
+                } else{
+                    this.setState({
+                        type: 'trans'
+                    })
+                }
+            })
+        } else {
+            this.setState({
+                type: 'dark'
+            })
+        }
+    }
+
     render(){
-        const { type } = this.props;
+        const { type } = this.state;
         return(
             <nav className={`nav ${type}`}>
                 <section className="nav-logo">

@@ -11,7 +11,7 @@ const SignedOutLinks = () => {
                 About
             </NavLink>
             <NavLink to="/signup">
-                SignUp
+                Sign Up
             </NavLink>
             <NavLink to="/login">
                 Login

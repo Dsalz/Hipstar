@@ -3,7 +3,7 @@ nav.nav{
     top: 0;
     left: 0;
     width: 92vw;
-    padding: 20px 4vw;
+    padding: 10px 4vw;
     display: flex;
     z-index: 1000;
 }
@@ -12,11 +12,24 @@ nav.trans{
     background: transparent;
 }
 
+nav.dark{
+    background: #292F36;
+    box-shadow: 0 4px 30px rgba(0,0,0,.25);
+}
+
+nav.dark a{
+    color: #ED254E !important;
+}
+
+nav.dark .nav-links a:hover, nav.dark .nav-links a.active{
+    border-bottom: 2px solid #ED254E;
+}
+
 nav.trans a{
     color: #F0F7F4 !important;
 }
 
-nav.trans a:hover{
+nav.trans .nav-links a:hover, nav.trans .nav-links a.active{
     border-bottom: 2px solid #F0F7F4;
 }
 
