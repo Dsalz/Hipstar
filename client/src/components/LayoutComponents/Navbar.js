@@ -38,8 +38,18 @@ class Navbar extends Component {
         }
     }
 
+    state = {
+        showResponsiveNav : false
+    }
+
+    toggleResponsiveNav = () => {
+        this.setState({
+            showResponsiveNav : !this.state.showResponsiveNav
+        })
+    }
+
     render(){
-        const { type } = this.state;
+        const { type, showResponsiveNav } = this.state;
         return(
             <nav className={`nav ${type}`}>
                 <section className="nav-logo">
@@ -47,7 +57,19 @@ class Navbar extends Component {
                     <img src={type ==='trans' ? WhiteLogo : RedLogo} alt="hipstar-logo" />
                     </Link>
                 </section>
-                <SignedOutLinks />
+                <section className="nav-links">
+                    <div className="norm-nav">
+                        <SignedOutLinks />
+                    </div>
+                    <div className={`nav-toggle ${showResponsiveNav ? "open" : "close"}`} onClick={this.toggleResponsiveNav}>
+                    <hr />
+                    <hr />
+                    <hr />
+                    </div>
+                </section>
+                <div className = { `resp-nav ${showResponsiveNav && 'showtime'}` }>
+                {showResponsiveNav && <SignedOutLinks />}                
+                </div>
             </nav>
         )
     }

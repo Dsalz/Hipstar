@@ -47,7 +47,7 @@ body{
     color: #292F36;
     width: 80%;
     margin: 120px auto 50px;
-    overflow-y:hidden;
+    overflow:hidden;
 }
 
 .slashed-card-info{
@@ -83,10 +83,10 @@ body{
 
 .slashed-card-demo{
     background: #ffffff;
-    width: 125px;
-    height: 485px;
+    width: 175px;
+    height: 500px;
     position: absolute;
-    top: 0px;
+    top: -10px;
     right: -65px;
     transform: rotate(-15deg);
     z-index: 6;
@@ -97,7 +97,80 @@ body{
 }
 
 .slashed-card-img img{
-    width: 100%;
+    position: relative;
+    left: -10%;
+    width: 110%;
     height: 100%;
     z-index: 1;
+}
+
+@media screen and (max-width: 1100px){
+    .slashed-card-info hr{
+        width: 19px;
+    }
+    .slashed-card-info h2{
+        font-size: 40px;
+    }
+
+    .slashed-card-info p{
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 900px){
+    .slashed-card-info a {
+        margin-top: 10px;
+    }
+
+    .slashed-card{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .slashed-card-info h2 {
+        font-size: 30px;
+    }
+
+    .slashed-card-info hr {
+        width: 13px;
+        margin-top: -4px;
+        border-width: 2px;
+    }
+
+    .slashed-card-info p {
+        font-size: 14px;
+    }
+
+    .slashed-card-info a {
+        margin-left: -20px;
+    }
+
+    .red-cta-btn{
+        transform: scale(.8);
+    }
+}
+
+@media screen and (max-width: 662px){
+    .slashed-card{
+        overflow-x: hidden;
+    }
+
+    .slashed-card-info{
+        text-align: left;
+        width: 100%;
+    }
+    .slashed-card-demo{
+        width: 0;
+    }
+
+    .slashed-card-img {
+        width: 0;
+    }
+
+    .slashed-card-info p{
+        width: 100%;
+    }
+
 }

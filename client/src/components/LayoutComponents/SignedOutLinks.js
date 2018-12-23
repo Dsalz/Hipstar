@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const SignedOutLinks = () => {
     return(
-        <section className="nav-links">
+        <React.Fragment>
             <NavLink to="/allmovies">
                 All Movies
             </NavLink>
@@ -16,7 +16,7 @@ const SignedOutLinks = () => {
             <NavLink to="/login">
                 Login
             </NavLink>      
-        </section>
+        </React.Fragment>
     )
 }
 

@@ -21,7 +21,8 @@ nav.dark a{
     color: #ED254E !important;
 }
 
-nav.dark .nav-links a:hover, nav.dark .nav-links a.active{
+nav.dark .nav-links a:hover, nav.dark .nav-links a.active, 
+nav.dark .resp-nav a:hover, nav.dark .resp-nav a.active{
     border-bottom: 2px solid #ED254E;
 }
 
@@ -29,7 +30,8 @@ nav.trans a{
     color: #F0F7F4 !important;
 }
 
-nav.trans .nav-links a:hover, nav.trans .nav-links a.active{
+nav.trans .nav-links a:hover, nav.trans .nav-links a.active,
+nav.trans .resp-nav a:hover, nav.trans .resp-nav a.active{
     border-bottom: 2px solid #F0F7F4;
 }
 
@@ -55,5 +57,89 @@ nav.trans .nav-links a:hover, nav.trans .nav-links a.active{
     display: inline-block;
     font-size: 20px;
     margin: 0 15px 10px;
+}
+
+.nav-toggle{
+    display: none;
+    width: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.nav-toggle hr{
+    max-width: 100%;
+    margin: 10px 0;
+    transition: all .3s ease-in;
+}
+
+nav.dark .nav-toggle hr{
+    border: 2px solid #ED254E;
+}
+
+nav.trans .nav-toggle hr{
+    border: 2px solid #F0F7F4;
+}
+
+div.open hr:first-of-type{
+    transform: rotate(45deg);
+    position: relative;
+    top: 11.5px;
+}
+
+div.open hr:nth-of-type(2){
+    border-width: 0;
+}
+
+div.open hr:last-of-type{
+    transform: rotate(-45deg);
+    position: relative;
+    top: -11.5px;
+}
+
+.resp-nav{
+    width: 100%;
+    position: relative;
+    display: none;
+}
+
+.resp-nav a {
+    display: block;
+    width: fit-content;
+    text-align: center;
+    margin: 15px auto;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+div.showtime{
+    animation: revelation .3s linear;
+}
+
+@keyframes revelation {
+    0%{
+        top: -100px;
+    }
+
+    100%{
+        top: 0px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .norm-nav {
+        display: none;
+    }
+
+    .nav-toggle{
+        display: block;
+    }
+
+    nav.nav{
+        flex-wrap: wrap;
+    }
+
+    .resp-nav{
+        display: block;
+    }
 
 }

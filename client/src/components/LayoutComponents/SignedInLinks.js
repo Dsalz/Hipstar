@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const SignedInLinks = ({ userName }) => {
     return(
-        <section className="nav-links">
+        <React.Fragment>
             <NavLink to="/allmovies">
                 All Movies
             </NavLink>
@@ -16,7 +16,7 @@ const SignedInLinks = ({ userName }) => {
             <NavLink to="/signup">
                 {`Welcome ${userName}`}
             </NavLink>    
-        </section>
+        </React.Fragment>
     )
 }
 
