@@ -1,36 +1,55 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 
 //Components
 import Navbar from './LayoutComponents/Navbar';
 
 //Images
-import AboutImage from '../images/AboutImage.jpg';
+import LoginImage from '../images/LoginImage.jpg';
 
-const AboutPage = () => {
-    return(
-        <div className="black-bg">
-          <Navbar type="dark"/>
-          <section className="slashed-card">
-            <section className="slashed-card-info">
-                <h2>About</h2>
-                <hr/>
-                <p>Hipstar is a platform for movie goers to give honest and raw reviews to movies they’ve seen to help others determine if it is worth seeing or not. </p>
-                <p>You can go into as much detail as possible even add special effects if you like (ka-boom, ka-pow allowed).</p>
-                <p>Now go forth and give that review!</p>
-                <Link to="/allmovies" className="red-cta-btn">
-                   Rate a movie
-                </Link>
-                <div className="slashed-card-demo">
-                </div>
-            </section>
+class LoginPage extends Component {
 
-            <section className="slashed-card-img">
-                <img src={AboutImage} alt="hipstar"/>
-            </section>
-          </section>
-        </div>
-    )
+    state = {
+        name: '',
+        password: '',
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    login = (e) => {
+        e.preventDefault();
+
+    }
+
+    render(){
+        return(
+            <div className="black-bg">
+              <Navbar type="dark"/>
+              <section className="slashed-card">
+                <section className="slashed-card-info">
+                    <h2>Login</h2>
+                    <hr/>
+                    <form onSubmit={this.login}>
+                    <label htmlFor='name'>Email\Username :</label><br />
+                    <input type="text" class="bar-input" name='name' id='name' onChange={this.handleChange}/><br />
+                    <label htmlFor='password'>Password :</label><br />
+                    <input type="password" class="bar-input" name='password' id='password' onChange={this.handleChange}/><br />
+                    <input className="red-cta-btn login-btn" value="Let's Go" type="submit"/>
+                    </form>
+                    <div className="slashed-card-demo">
+                    </div>
+                </section>
+    
+                <section className="slashed-card-img">
+                    <img src={LoginImage} alt="hipstar login"/>
+                </section>
+              </section>
+            </div>
+        )
+    }
 }
 
-export default AboutPage;
+export default LoginPage;

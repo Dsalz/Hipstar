@@ -23,11 +23,14 @@ body{
     color: #F0F7F4;
     padding: 15px 30px;
     border-radius: 10px;
+    border: none;
+    outline: none;
     font-size: 20px;
     text-align: center;
     text-decoration: none;
     width: fit-content;
     transition: all .3s linear;    
+    cursor: pointer;
 }
 
 .red-cta-btn:hover{
@@ -45,7 +48,7 @@ body{
     display: flex;
     background: #ffffff;
     color: #292F36;
-    width: 80%;
+    width: 90%;
     margin: 120px auto 50px;
     overflow:hidden;
 }
@@ -61,6 +64,8 @@ body{
     font-weight: bold;
     font-size: 50px;
     margin: 0;
+    position: relative;
+    z-index: 10;
 }
 
 .slashed-card-info p{
@@ -83,8 +88,8 @@ body{
 
 .slashed-card-demo{
     background: #ffffff;
-    width: 175px;
-    height: 500px;
+    width: 200px;
+    height: 600px;
     position: absolute;
     top: -10px;
     right: -65px;
@@ -103,6 +108,36 @@ body{
     height: 100%;
     z-index: 1;
 }
+
+.slashed-card label{
+    font-size: 18px;
+}
+
+.slashed-card-info form {
+    margin-top: 30px;
+    position: relative;
+    z-index: 10;
+    width: 110%
+}
+
+.bar-input{
+    width: 100%;
+    border:none;
+    border-bottom: 3px solid #292F36;
+    margin: 20px 0;
+    padding: 0 5px;
+    font-size: 18px;
+}
+
+.bar-input:focus{
+    border-color: #ED254E;
+    outline: none;
+}
+
+.slashed-card-info form input[type = "submit"] {
+    margin-top: 30px;
+}
+
 
 @media screen and (max-width: 1100px){
     .slashed-card-info hr{
@@ -150,6 +185,10 @@ body{
     .red-cta-btn{
         transform: scale(.8);
     }
+
+    .slashed-card-info form input[type = "submit"] {
+        margin-left: -13px;
+    }
 }
 
 @media screen and (max-width: 662px){
@@ -171,6 +210,10 @@ body{
 
     .slashed-card-info p{
         width: 100%;
+    }
+
+    .slashed-card-info form {
+        width: 96%;
     }
 
 }

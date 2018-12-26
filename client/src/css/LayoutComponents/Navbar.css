@@ -142,4 +142,9 @@ div.showtime{
         display: block;
     }
 
+    .nav-logo img{
+        width: 70px;
+        height: 55px;
+    }
+
 }

@@ -1,0 +1,37 @@
+.all-movies-section{
+    margin-top: 40px;
+    padding: 10px 4vw;
+    color: #F0F7F4;
+    text-align: center;
+}
+
+.all-movies-section h2{
+    text-align: left;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 20px 0;
+}
+
+.all-movies-section hr{
+    width: 28px;
+    border: 3px solid #F0F7F4;
+    margin: -25px 0 0;
+}
+
+.all-movies-section input{
+    width: 300px;
+    max-width: 90%;
+    margin: 40px auto 20px;
+    background: transparent;
+    color: #F0F7F4;
+    border-color: #F0F7F4;
+}
+
+.all-movies-section-movies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
