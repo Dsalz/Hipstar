@@ -20,9 +20,31 @@
     height: 500px;
 }
 
-.mid-movie-card img{
+.mid-movie-card-img{
     width: 100%;
     height: 72%;
+    position: relative;
+}
+
+.mid-movie-card img{
+    width: 100%;
+    height: 100%;
+}
+
+.mid-movie-card-rating{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #000000;
+    background: #ED254E;
+    padding: 5px 10px 5px 5px;
+}
+
+.mid-movie-card-rating:before{
+    content: '\2605';
+    font-size: 15px;
+    color: #000;
+    margin-right: 2px;
 }
 
 .mid-movie-card-info{
@@ -30,6 +52,7 @@
     height: 28%;
     background: #000;
     text-align: center;
+    padding: 15px 0;
 }
 
 .mid-movie-card-info h3{
@@ -40,7 +63,7 @@
 .mid-movie-card-info p{
     color: #ED254E;
     width:fit-content;
-    margin: 0 auto;
+    margin: 5px auto 0;
 }
 
 @media screen and (max-width: 800px){

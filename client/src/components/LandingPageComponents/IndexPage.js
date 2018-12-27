@@ -10,13 +10,13 @@ class IndexPage extends Component{
     
     render(){
         const movies = [
-            {img: 'https://placehold.it/100', title: 'Aquaman', reviews: []},
-            {img: 'https://placehold.it/100', title: 'Aquaman', reviews: []},
-            {img: 'https://placehold.it/100', title: 'Aquaman', reviews: []},
-            {img: 'https://placehold.it/100', title: 'Aquaman', reviews: []},
-            {img: 'https://placehold.it/100', title: 'Aquaman', reviews: []},
-            {img: 'https://placehold.it/100', title: 'Aquaman', reviews: []},
-            {img: 'https://placehold.it/100', title: 'Aquaman', reviews: []}
+            {id: 1, img: 'https://placehold.it/100', title: 'Aquaman', reviews: [], rating: 8.2},
+            {id: 2, img: 'https://placehold.it/100', title: 'Aquaman', reviews: [], rating: 4.2},
+            {id: 3, img: 'https://placehold.it/100', title: 'Aquaman', reviews: [], rating: 1.2},
+            {id: 4, img: 'https://placehold.it/100', title: 'Aquaman', reviews: [], rating: 0.2},
+            {id: 5, img: 'https://placehold.it/100', title: 'Aquaman', reviews: [], rating: 2.2},
+            {id: 6, img: 'https://placehold.it/100', title: 'Aquaman', reviews: [], rating: 6.2},
+            {id: 7, img: 'https://placehold.it/100', title: 'Aquaman', reviews: [], rating: 9.2}
         ];
       return(
       <div>

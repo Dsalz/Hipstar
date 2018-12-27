@@ -31,6 +31,7 @@ body{
     width: fit-content;
     transition: all .3s linear;    
     cursor: pointer;
+    font-family: inherit;
 }
 
 .red-cta-btn:hover{
@@ -138,6 +139,28 @@ body{
     margin-top: 30px;
 }
 
+.hipstar-rating{
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    color: transparent;
+    overflow: hidden;
+}
+
+.hipstar-rating-full{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ED254E;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hipstar-rating-empty::before, .hipstar-rating-full::before{
+    content: '\2605 \2605 \2605 \2605 \2605';
+    font-size: 20px;
+    -webkit-text-stroke: .5px #ED254E;
+}
 
 @media screen and (max-width: 1100px){
     .slashed-card-info hr{

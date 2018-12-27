@@ -7,6 +7,7 @@ import AboutPage from '../components/AboutPage';
 import LoginPage from '../components/LoginPage';
 import SignUpPage from '../components/SignUpPage';
 import AllMoviesPage from '../components/MovieComponents/AllMoviesPage';
+import MovieDetails from '../components/MovieComponents/MovieDetails';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path='/login' component={LoginPage} />
           <Route path='/signup' component={SignUpPage} />
           <Route path='/allmovies' component={AllMoviesPage} />
+          <Route path='/movie/:movieName' component={MovieDetails} />
         </Switch>
       </BrowserRouter>
     );
