@@ -1,4 +1,4 @@
-import graphQL from 'graphql';
+const graphQL = require('graphql');
 
 const {
     GraphQLString,
@@ -124,14 +124,78 @@ const RootQuery = new GraphQLObjectType({
             type: MovieType,
             args: { id: { type: GraphQLID}},
             resolve(parent, args){
-                return movies.find(movie => movie.id === args.id)
+                return movies.find(movie => movie.id === Number(args.id))
+            }
+        },
+        user: {
+            type: UserType,
+            args: { userName: {type: GraphQLString}},
+            resolve(parent, args){
+                return users.find(user => user.userName === args.userName)
+            }
+        },
+        login: {
+            type: UserType,
+            args: { userName: {type: GraphQLString}, password: {type: GraphQLString}},
+            resolve(parent, args){
+                return users.find(user => user.userName === args.userName)
+            }
+        },
+        movies: {
+            type: new GraphQLList(MovieType),
+            resolve(parent, args){
+                return movies;
+            }
+        },
+        // recentlyReviewedMovies: {
+        //     type: new GraphQLList(MovieType),
+        //     resolve(parent, args){
+        //         return movies.sort();
+        //     }
+        // }
+    })
+});
+
+const Mutation = new GraphQLObjectType({
+    name: 'Mutation',
+    fields: () => ({
+        addReview: {
+            type: ReviewType,
+            args: {
+                message: {type: GraphQLString},
+                authorId: {type: GraphQLID },
+                movieId: {type: GraphQLID },
+                rating: {type: GraphQLInt },
+                whereSeen: { type: GraphQLString},
+                whenSeen: { type: GraphQLString}
+            },
+            resolve(parent, args){
+                const { 
+                    message,
+                    authorId,
+                    movieId,
+                    rating,
+                    whereSeen,
+                    whenSeen 
+                } = args;
+
+                const newReview = { 
+                    message,
+                    authorId,
+                    movieId,
+                    rating,
+                    whereSeen,
+                    whenSeen 
+                };
+
+                reviews.push(newReview);
+                return newReview;
             }
         }
     })
 })
 
-const Schema = new GraphQLSchema({
-    query: RootQuery
-})
-
-export default Schema;
+export default new GraphQLSchema({
+    query: RootQuery,
+    mutation: Mutation
+});
