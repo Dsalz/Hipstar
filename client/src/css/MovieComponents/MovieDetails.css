@@ -7,7 +7,7 @@
     height: 700px;
     width: 100%;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .movie-details-section-top-bg{
@@ -30,10 +30,10 @@
 
 .movie-details-section-top-info{
     position: absolute;
-    bottom: -200px;
+    bottom: 210px;
     left: 0;
     width: calc(100% - 8vw);
-    height: fit-content;
+    height: 0;
     display: flex;
     justify-content: space-between;
     padding: 0 4vw;
@@ -90,7 +90,7 @@
     color: #F0F7F4;
     text-align: left;
     padding: 0 4vw;
-    margin-top: -190px;
+    margin-top: -10px;
 }
 
 .movie-details-section-mid h4{
@@ -98,7 +98,7 @@
     margin: 10px 0;
 }
 
-.movie-details-section-mid hr{
+.movie-details-section-red-line{
     border: 1px solid #ED254E;
     width: 40%;
     min-width: 250px;
@@ -114,7 +114,7 @@
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 .movie-details-section-mid-cast a{
@@ -124,6 +124,7 @@
     width: fit-content;
     display: flex;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .movie-details-section-mid-cast span{
@@ -133,11 +134,21 @@
 }
 
 .movie-details-section-mid-cast hr{
-    transform: rotate(90deg);
     border: 1px solid #F0F7F4;
-    height: 100%;
-    width: 1px;
-    min-width: 1px;
+    height: 95%;
+    margin: 0
+}
+
+.movie-details-review-header{
+    text-align: left;
+    font-size: 35px;
+    color: #F0F7F4;
+}
+
+.movie-details-review-line{
+    width: 18px;
+    border: 3px solid #F0F7F4;
+    margin: -35px 0 30px;
 }
 
 

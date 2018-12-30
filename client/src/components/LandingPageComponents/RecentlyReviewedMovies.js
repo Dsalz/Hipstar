@@ -12,7 +12,12 @@ const RecentlyReviewedMovies = ({ movies }) => {
                 <hr/>
                 <section className="recently-rev-movies-section-movies">
                     <article className="mid-movie-card">
-                        <img src={CA} alt="Ca"/>
+                        <div className="mid-movie-card-img">
+                            <img src={CA} alt='CA' />
+                            <span className="mid-movie-card-rating">
+                            9.1
+                            </span>
+                        </div>
                         <div className = "mid-movie-card-info">
                             <h3>boom</h3>
                             <p>6 reviews</p>
