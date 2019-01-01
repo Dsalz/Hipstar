@@ -42,31 +42,51 @@ class MovieDetails extends Component{
                     </section>
                 </section>
                 <section className='movie-details-section-mid'>
-                <h4>Release Date</h4>
-                <hr className='movie-details-section-red-line'/>
-                <p>
-                    12th November 2018
-                </p>
-                <h4>Description</h4>
-                <hr className='movie-details-section-red-line'/>
-                <p>
-                    Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races
-                </p>
-                <h4>Cast</h4>
-                <hr className='movie-details-section-red-line'/>
-                <div className="movie-details-section-mid-cast">
-                    <a href="">
-                        <span>Carol Danvers</span>
-                        <hr/>
-                        <span>Brie Larson</span>
-                    </a>
-                </div>
-                <h3 className="movie-details-review-header">Reviews</h3>
-                <hr className="movie-details-review-line"/>
-                <Review />
-                <Review />
-                <Review />
-                <button className="red-cta-btn">Review this Movie</button> 
+                    <h4>Release Date</h4>
+                    <hr className='movie-details-section-red-line'/>
+                    <p className='movie-details-section-mid-text'>
+                        12th November 2018
+                    </p>
+                    <h4>Description</h4>
+                    <hr className='movie-details-section-red-line'/>
+                    <p className='movie-details-section-mid-text'>
+                        Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races
+                    </p>
+                    <h4>Cast</h4>
+                    <hr className='movie-details-section-red-line'/>
+                    <div className="movie-details-section-mid-cast">
+                        <a href="">
+                            <span>Carol Danvers</span>
+                            <hr/>
+                            <span>Brie Larson</span>
+                        </a>
+                        <a href="">
+                            <span>Carol Danvers</span>
+                            <hr/>
+                            <span>Brie Larson</span>
+                        </a>
+                        <a href="">
+                            <span>Carol Danvers</span>
+                            <hr/>
+                            <span>Brie Larson</span>
+                        </a>
+                        <a href="">
+                            <span>Carol Danvers</span>
+                            <hr/>
+                            <span>Brie Larson</span>
+                        </a>
+                        <a href="">
+                            <span>Carol Danvers</span>
+                            <hr/>
+                            <span>Brie Larson</span>
+                        </a>
+                    </div>
+                    <h3 className="movie-details-review-header">Reviews</h3>
+                    <hr className="movie-details-review-line"/>
+                    <Review />
+                    <Review />
+                    <Review />
+                    <button className="red-cta-btn">Review this Movie</button> 
                 </section>
             </section>
         )

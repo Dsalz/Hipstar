@@ -1,5 +1,5 @@
 .review{
-    width: 100%;
+    width: calc(100% - 40px);
     margin: 20px 0;
     background: #000000;
     text-align: left;
@@ -8,8 +8,9 @@
     color: #F0F7F4;
 }
 
-.review p{
-    font-size: 25px;
+p.review-text{
+    font-size: 20px;
+    margin: 10px 0 30px;
 }
 
 .review a{
@@ -55,4 +56,11 @@
     font-size: 15px;
     color: #000;
     margin-right: 2px;
+}
+
+@media screen and (max-width: 700px){
+    p.review-text{
+        font-size: 18px;
+    }
+
 }

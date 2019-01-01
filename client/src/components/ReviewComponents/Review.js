@@ -9,8 +9,8 @@ import '../../css/ReviewComponents/Review.css';
 
 const Review = ({withMovieName}) => {
     return(<div className="review">
-        <p>hfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhfhf</p>
-        <p>-<a href="#">jfjfj</a></p>
+        <p className="review-text">hfhf hfh fh f h fhfh fhfhf hfhf hfhfh fhfhf hfhf hfhfh fhfhfh fhfh fhf hfh fhf hfhfhfhfhf</p>
+        <p className="review-text">- <a href="#">jfjfj</a></p>
         <div className="review-rating">
             <div className="review-rating-info">
                 <h4 className="review-rating-movie">Captain America</h4>

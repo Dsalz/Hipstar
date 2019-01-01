@@ -49,11 +49,12 @@
 .movie-details-section-top-info-deets{
     width: fit-content;
     text-align: center;
-    padding: 15px 20px 10px;
+    padding: 35px 40px 10px;
+    margin-right: auto;
 }
 
 .movie-details-section-top-info-deets h3{
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
     margin: 5px 0;
     color: #F0F7F4;
@@ -89,7 +90,7 @@
     z-index: 5;
     color: #F0F7F4;
     text-align: left;
-    padding: 0 4vw;
+    padding: 0 4vw 50px;
     margin-top: -10px;
 }
 
@@ -105,7 +106,7 @@
     margin: 0;
 }
 
-.movie-details-section-mid p{
+.movie-details-section-mid-text{
     font-size: 20px;
     margin: 10px 0 30px;
 }
@@ -125,11 +126,12 @@
     display: flex;
     text-decoration: none;
     cursor: pointer;
+    margin: 10px 5px;
 }
 
 .movie-details-section-mid-cast span{
     width: fit-content;
-    font-size: 20px;
+    font-size: 16px;
     padding: 10px;
 }
 
@@ -149,6 +151,81 @@
     width: 18px;
     border: 3px solid #F0F7F4;
     margin: -35px 0 30px;
+}
+
+.movie-details-section-mid button{
+    display: block;
+    margin: 30px auto
+}
+
+@media screen and (max-width: 900px){
+    .movie-details-section-top{
+        height: 625px;
+    }
+
+    .movie-details-section-top-poster {
+        width: 200px;
+        height: 300px;
+        top: -150px;
+    }
+
+    .movie-details-section-top-info-deets{
+        padding: 0px 20px 10px;
+        margin-top: -170px;
+        text-align: left;
+        padding: 35px 0px 10px;
+        order: 3;
+        width: 100%;
+    }
+
+    .movie-details-section-top-info-deets p{
+        margin: 10px 0;
+    }
+
+    .movie-details-section-top-info{
+        flex-wrap: wrap;
+    }
+
+    .movie-details-section-top-info {
+        bottom: -20px;
+        height: fit-content;
+    }
+
+    .movie-details-section-mid{
+        margin-top: 30px;
+    }
+
+    .movie-details-section-top-info-btns{
+        margin-top: 80px;
+    }
+
+    .movie-details-section-top-info-deets h3{
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .movie-details-section-top-poster {
+        width: 150px;
+        height: 220px;
+        top: -145px;
+    }
+
+    .movie-details-section-top-info-btns{
+        margin-top:0;
+        margin-right: -10vw;
+        width: 175px;
+        padding-top: 10px;
+    }
+
+    .movie-details-section-top-info-btns button{
+        transform: scale(.7) !important;
+        margin-left: -4vw;
+    }
+
+    .movie-details-section-top {
+        height: 560px;
+    }
 }
 
 
