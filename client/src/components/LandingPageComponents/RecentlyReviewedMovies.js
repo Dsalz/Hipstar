@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+//Components
 import MidMovieCard from '../MovieComponents/MidMovieCard';
+
+//CSS
 import '../../css/LandingPageComponents/RecentlyReviewedMovies.css';
+
+//Images
 import CA from '../../images/CA.jpg';
 
 const RecentlyReviewedMovies = ({ movies }) => {

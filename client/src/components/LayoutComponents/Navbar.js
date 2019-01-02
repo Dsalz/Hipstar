@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // Components
 import SignedOutLinks from './SignedOutLinks';
-// import SignedInLinks from './SignedInLinks';
+import SignedInLinks from './SignedInLinks';
 
 //CSS
 import '../../css/LayoutComponents/Navbar.css';
@@ -36,6 +36,10 @@ class Navbar extends Component {
                 type: 'dark'
             })
         }
+
+        this.setState({
+            userName: localStorage.HipstarUserName
+        })
     }
 
     state = {
@@ -49,7 +53,7 @@ class Navbar extends Component {
     }
 
     render(){
-        const { type, showResponsiveNav } = this.state;
+        const { type, showResponsiveNav, userName } = this.state;
         return(
             <nav className={`nav ${type}`}>
                 <section className="nav-logo">
@@ -59,7 +63,8 @@ class Navbar extends Component {
                 </section>
                 <section className="nav-links">
                     <div className="norm-nav">
-                        <SignedOutLinks />
+                        {!userName && <SignedOutLinks />}
+                        {userName && <SignedInLinks userName={userName} />}
                     </div>
                     <div className={`nav-toggle ${showResponsiveNav ? "open" : "close"}`} onClick={this.toggleResponsiveNav}>
                     <hr />
@@ -68,7 +73,8 @@ class Navbar extends Component {
                     </div>
                 </section>
                 <div className = { `resp-nav ${showResponsiveNav && 'showtime'}` }>
-                {showResponsiveNav && <SignedOutLinks />}                
+                {(showResponsiveNav && !userName) && <SignedOutLinks />}                
+                {(showResponsiveNav && userName) && <SignedInLinks userName={userName}/>}                
                 </div>
             </nav>
         )

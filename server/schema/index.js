@@ -1,4 +1,5 @@
 const graphQL = require('graphql');
+import bcrypt from 'bcrypt';
 
 //Models
 import Movies from '../models/movie';
@@ -12,7 +13,8 @@ const {
     GraphQLID,
     GraphQLObjectType,
     GraphQLFloat,
-    GraphQLList
+    GraphQLList,
+    GraphQLBoolean
 } = graphQL;
 
 const ReviewType = new GraphQLObjectType({
@@ -34,7 +36,8 @@ const ReviewType = new GraphQLObjectType({
         },
         rating: {type: GraphQLFloat},
         whereSeen: { type: GraphQLString},
-        whenSeen: { type: GraphQLString}
+        whenSeen: { type: GraphQLString},
+        dateCreated: { type: GraphQLString}
     })
 })
 
@@ -103,15 +106,31 @@ const RootQuery = new GraphQLObjectType({
         user: {
             type: UserType,
             args: { userName: {type: GraphQLString}},
-            resolve(parent, args){
-                return Users.find({ userName: args.userName })
+            async resolve(parent, args){
+               const users = await Users.find({ userName: args.userName });
+               return users[0];
             }
         },
         login: {
             type: UserType,
             args: { userName: {type: GraphQLString}, password: {type: GraphQLString}},
             resolve(parent, args){
-                return Users.find({userName: args.userName, password: args.password})
+                Users.find({userName: args.userName})
+                .then((user) => {
+                    if (!user){
+                        user = Users.find({email: args.userName})
+                    }
+                    if(user){
+                        bcrypt.compare(password, user.password)
+                        .then((rightPassword) => {
+                            if(rightPassword){
+                                return user;
+                            }
+                            return user;
+                        })
+                    }
+                    return user;                    
+                })
             }
         },
         movies: {
@@ -140,7 +159,8 @@ const Mutation = new GraphQLObjectType({
                 movieId: {type: GraphQLString },
                 rating: {type: GraphQLFloat },
                 whereSeen: { type: GraphQLString},
-                whenSeen: { type: GraphQLString}
+                whenSeen: { type: GraphQLString},
+                dateCreated: { type: GraphQLString},
             },
             resolve(parent, args){
                 const { 
@@ -149,7 +169,8 @@ const Mutation = new GraphQLObjectType({
                     movieId,
                     rating,
                     whereSeen,
-                    whenSeen 
+                    whenSeen,
+                    dateCreated 
                 } = args;
 
                 const newReview = new Reviews({ 
@@ -158,10 +179,36 @@ const Mutation = new GraphQLObjectType({
                     movieId,
                     rating,
                     whereSeen,
-                    whenSeen 
+                    whenSeen,
+                    dateCreated 
                 });
 
                 return newReview.save();
+            }
+        },
+        signUp: {
+            type: UserType,
+            args: {
+                email: {type: GraphQLString},
+                userName: {type: GraphQLString},
+                password: {type: GraphQLString}
+            },
+            resolve(parent, args){
+                const { 
+                    email,
+                    userName,
+                    password
+                } = args;
+
+                return bcrypt.hash(password , 5).then((hashedPassword) => {
+                    const newUser = new Users({ 
+                        email,
+                        userName,
+                        password: hashedPassword
+                    });
+                    newUser.save().then(user => user);
+                })
+                
             }
         }
     })

@@ -18,6 +18,9 @@ const ReviewSchema = new Schema({
     },
     whenSeen: { 
         type: String
+    },
+    dateCreated: { 
+        type: String
     }
 })
 

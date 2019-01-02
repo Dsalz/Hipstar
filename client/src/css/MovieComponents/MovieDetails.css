@@ -199,8 +199,25 @@
         margin-top: 80px;
     }
 
-    .movie-details-section-top-info-deets h3{
+    .movie-details-section-top-info-deets h3, .movie-details-section-mid h4{
         font-size: 25px;
+    }
+
+    .movie-details-section-mid-text{
+        font-size: 18px;
+    }
+
+    .movie-details-section-mid-cast span{
+        font-size: 14px;
+    }
+
+    .movie-details-review-header{
+        font-size: 30px;
+    }
+
+    .movie-details-review-line {
+        width: 14px;
+        border-width: 2px;
     }
 }
 
@@ -213,18 +230,31 @@
 
     .movie-details-section-top-info-btns{
         margin-top:0;
-        margin-right: -10vw;
+        margin-right: -12vw;
         width: 175px;
         padding-top: 10px;
     }
 
     .movie-details-section-top-info-btns button{
         transform: scale(.7) !important;
-        margin-left: -4vw;
+        margin-left: -6vw;
     }
 
     .movie-details-section-top {
-        height: 560px;
+        height: 550px;
+    }
+
+    .movie-details-section-mid h4{
+        font-size: 20px;
+        margin: 5px 0;
+    }
+
+    .movie-details-section-mid-text{
+        font-size: 16px;
+    }
+
+    .movie-details-section-mid-cast span{
+        font-size: 12px;
     }
 }
 

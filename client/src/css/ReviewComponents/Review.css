@@ -60,7 +60,7 @@ p.review-text{
 
 @media screen and (max-width: 700px){
     p.review-text{
-        font-size: 18px;
+        font-size: 16px;
     }
 
 }
