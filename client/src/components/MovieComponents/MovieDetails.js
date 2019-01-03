@@ -14,10 +14,36 @@ import CAbg from '../../images/CA-bg.jpg';
 
 class MovieDetails extends Component{
     state = {
-        page: 'details'
+        page: 'details',
+        newReview: {
+            message: '',
+            rating: '',
+            whereSeen: '',
+            whenSeen: '',
+        }
+    }
+
+    showNewReviewPage = () => {
+        this.setState({
+            page: 'newReview'
+        })
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            newReview : {
+                [e.target.name]: e.target.value
+            }
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(this.state.newReview);
     }
     render(){
-        const { page } = this.state;
+        const { page, newReview } = this.state;
+        const { rating, message, whereSeen, whenSeen } = newReview;
         return(
             <section className="movie-details-section black-bg">
                 <Navbar type='trans'/>
@@ -36,12 +62,13 @@ class MovieDetails extends Component{
                             { page === 'details' && (
                             <React.Fragment>
                             <button className="red-cta-btn">Edit this Movie</button><br/>
-                            <button className="red-cta-btn">Review this Movie</button> 
+                            <button className="red-cta-btn" onClick={this.showNewReviewPage}>Review this Movie</button> 
                             </React.Fragment>)}
                         </div>
                     </section>
                 </section>
-                <section className='movie-details-section-mid'>
+                {page === 'details' && (
+                    <section className='movie-details-section-mid'>
                     <h4>Release Date</h4>
                     <hr className='movie-details-section-red-line'/>
                     <p className='movie-details-section-mid-text'>
@@ -88,7 +115,37 @@ class MovieDetails extends Component{
                     <Review />
                     <button className="red-cta-btn">Review this Movie</button> 
                 </section>
-            </section>
+                )}
+                {page === 'newReview' && (
+                <section className='movie-details-section-mid'>
+                <h3 className="movie-details-review-header">New Review</h3>
+                <hr className="movie-details-review-line"/>
+                <form onSubmit={this.handleSubmit}>
+                    <section className="movie-details-new-review-box">
+                        <textarea placeholder="Enter Review Here" onChange = {this.handleChange} id="message" name="message" value={message} required></textarea>
+                    </section>
+                    <section className="movie-details-new-review-split">
+                        <div className="movie-details-new-review-rating">
+                            { rating !== '' && <StarRating rating={rating} /> }
+                            { rating === '' && <StarRating rating={0} /> }
+                        <p>Rate Captain Marvel on a scale of 1 - 10</p>
+                        <input type="number" onChange = {this.handleChange} name="rating" id="rating" value={rating} min={1} max={10} required/>
+                        </div>
+                        <div className="movie-details-new-review-whenwhere">
+                            <p>Where and when did you see Captain Marvel?</p>
+                            <label htmlFor="whereSeen">Where</label><br />
+                            <input type="text" className="bar-input" onChange = {this.handleChange} name="whereSeen" id="whereSeen" value={whereSeen} required/><br />
+                            <label htmlFor="whenSeen">When</label><br />
+                            <input type="date" className="bar-input" onChange = {this.handleChange} name="whenSeen" id="whenSeen" value={whenSeen} required/><br />
+                        </div>
+                    </section>
+                    <button type="submit" className="red-cta-btn">
+                        Submit Review
+                    </button>
+                </form>
+                </section>
+                )}
+           </section>
         )
     }
 }
