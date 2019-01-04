@@ -15,11 +15,15 @@ import CAbg from '../../images/CA-bg.jpg';
 class MovieDetails extends Component{
     state = {
         page: 'details',
-        newReview: {
-            message: '',
-            rating: '',
-            whereSeen: '',
-            whenSeen: '',
+        message: '',
+        rating: '',
+        whereSeen: '',
+        whenSeen: '',
+    }
+
+    componentDidUpdate(){
+        if(this.state.page === 'newReview'){
+            window.scrollTo(0, 350);
         }
     }
 
@@ -28,12 +32,18 @@ class MovieDetails extends Component{
             page: 'newReview'
         })
     }
+    showDetailsPage = () => {
+        this.setState({
+            page: 'details'
+        })
+    }
 
     handleChange = (e) => {
+        if(e.target.name === 'rating' && e.target.value > 10){
+            return;
+        }
         this.setState({
-            newReview : {
                 [e.target.name]: e.target.value
-            }
         })
     }
 
@@ -42,8 +52,7 @@ class MovieDetails extends Component{
         console.log(this.state.newReview);
     }
     render(){
-        const { page, newReview } = this.state;
-        const { rating, message, whereSeen, whenSeen } = newReview;
+        const { page, rating, message, whereSeen, whenSeen } = this.state;
         return(
             <section className="movie-details-section black-bg">
                 <Navbar type='trans'/>
@@ -64,6 +73,9 @@ class MovieDetails extends Component{
                             <button className="red-cta-btn">Edit this Movie</button><br/>
                             <button className="red-cta-btn" onClick={this.showNewReviewPage}>Review this Movie</button> 
                             </React.Fragment>)}
+                            { page === 'newReview' && (
+                            <button className="red-cta-btn" onClick={this.showDetailsPage}>Movie Details</button> 
+                            )}
                         </div>
                     </section>
                 </section>

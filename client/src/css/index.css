@@ -132,11 +132,17 @@ input:focus , textarea:focus{
     margin: 20px 0;
     padding: 0 5px;
     font-size: 18px;
+    background: transparent;
 }
 
 .bar-input:focus{
     border-color: #ED254E;
     outline: none;
+}
+
+.lightskin-input{
+    border-color: #F0F7F4;
+    color: #F0F7F4;
 }
 
 .slashed-card-info form input[type = "submit"] {
