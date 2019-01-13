@@ -14,7 +14,6 @@ const {
     GraphQLObjectType,
     GraphQLFloat,
     GraphQLList,
-    GraphQLBoolean
 } = graphQL;
 
 const ReviewType = new GraphQLObjectType({
@@ -209,6 +208,45 @@ const Mutation = new GraphQLObjectType({
                     newUser.save().then(user => user);
                 })
                 
+            }
+        },
+        addMovie: {
+            type: MovieType,
+            args: {
+                title: GraphQLString,
+                bgImageUrl: GraphQLString, 
+                smImageUrl: GraphQLString,
+                releaseDate: GraphQLString,
+                description: GraphQLString,
+                cast: new GraphQLList(CastMemberType)
+            },
+            resolve(parent, args){
+                const { 
+                    title,
+                    bgImageUrl,
+                    smImageUrl,
+                    releaseDate,
+                    description,
+                    cast
+                } = args;
+
+                const newMovie = new Movies({
+                    title,
+                    bgImageUrl,
+                    smImageUrl,
+                    releaseDate,
+                    description,
+                });
+
+                return newMovie.save().then(movie => new Promise.all(cast.map( castMember => {
+                        new CastMembers({
+                            movieName,
+                            realName,
+                            pageLink,
+                            movieId : movie.id
+                        })
+                    })).then(() => movie)
+                )
             }
         }
     })

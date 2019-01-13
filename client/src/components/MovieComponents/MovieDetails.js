@@ -1,4 +1,5 @@
 import React , { Component } from 'react';
+import { graphql } from 'react-apollo';
 
 //Components
 import Navbar from '../LayoutComponents/Navbar';
