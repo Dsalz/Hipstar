@@ -1,4 +1,5 @@
 import React , { Component } from 'react';
+import { graphql } from 'react-apollo';
 // import { Redirect } from 'react-router-dom';
 
 //Components
@@ -6,6 +7,9 @@ import Navbar from '../LayoutComponents/Navbar';
 
 //CSS
 import '../../css/MovieComponents/MovieDetails.css';
+
+//Queries
+import { addMovieQuery } from '../../queries'
 
 
 class AddMovie extends Component{
@@ -77,6 +81,17 @@ class AddMovie extends Component{
     handleSubmit = (e) => {
         e.preventDefault();
         console.log(this.state);
+        const {title, bgImageUrl, smImageUrl, releaseDate, description, cast} = this.state;
+        this.props.addMovieQuery({
+            variables: {
+                title,
+                bgImageUrl,
+                smImageUrl,
+                releaseDate,
+                description,
+                cast
+            }
+        })
     }
     render(){
         const {title, bgImage, bgImageUrl, smImage, smImageUrl, releaseDate, description, cast} = this.state;
@@ -145,4 +160,4 @@ class AddMovie extends Component{
     }
 }
 
-export default AddMovie;
+export default graphql(addMovieQuery)(AddMovie);
