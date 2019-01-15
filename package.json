@@ -7,7 +7,13 @@
     "server": "nodemon ./server/server --exec babel-node",
     "client": "npm start --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start":"node ./build/server",
+    "clean": "rm -rf build && mkdir build",
+    "babel-build": "babel -d ./build ./server -s",
+    "build-server": "npm run clean && npm run babel-build",
+    "build-client": "npm install --prefix client && npm run build --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build-server && npm run build-client"
   },
   "repository": {
     "type": "git",

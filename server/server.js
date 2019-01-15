@@ -2,6 +2,7 @@ import express from 'express';
 import graphQLHTTP from 'express-graphql';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import path from 'path';
 
 dotenv.config();
 
@@ -19,5 +20,14 @@ app.use('/graphql', graphQLHTTP({
     graphiql: true,
     schema
 }))
+
+if(process.env.NODE_ENV === 'production'){
+
+    app.use(express.static(path.resolve('client', 'build')));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve('client', 'build', 'index.html'));
+    })
+}
 
 app.listen(4000, () => console.log('Listening'));
