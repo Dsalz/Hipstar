@@ -47,3 +47,18 @@ export const addMovieQuery = gql`
 
     }
 `;
+
+export const addReviewQuery = gql`
+    mutation($message: String!, $rating: Number!, $whereSeen: String!, $whenSeen: String!, $movieId: String!, $userId: String!){
+        addMovie(message: $message, rating: $rating, whereSeen: $whereSeen, whenSeen: $whenSeen, movieId: $movieId, userId: $userId){
+            message,
+            rating,
+            movie{
+                title
+            },
+            whereSeen,
+            whenSeen
+        }
+
+    }
+`;
