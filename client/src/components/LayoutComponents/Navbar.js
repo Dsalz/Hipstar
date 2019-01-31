@@ -36,7 +36,7 @@ class Navbar extends Component {
                 type: 'dark'
             })
         }
-
+        delete localStorage.HipstarUserName;
         this.setState({
             userName: localStorage.HipstarUserName
         })

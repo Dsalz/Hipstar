@@ -155,6 +155,7 @@ input:focus , textarea:focus{
     display: inline-block;
     color: transparent;
     overflow: hidden;
+    letter-spacing: 7px;
 }
 
 .hipstar-rating-full{

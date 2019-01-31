@@ -28,7 +28,7 @@ class IndexPage extends Component{
       <div>
       <Navbar type='trans'/>
       <LandingSection />
-      {!loading && <RecentlyReviewedMovies movies={movies.reverse().slice(0,6)} />}
+      {(!loading && movies) ? <RecentlyReviewedMovies movies={movies.reverse().slice(0,6)} />: <RecentlyReviewedMovies movies={[]}/>}
       <Footer />
       </div>)
     }

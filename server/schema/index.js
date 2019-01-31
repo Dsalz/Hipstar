@@ -135,6 +135,7 @@ const RootQuery = new GraphQLObjectType({
         movies: {
             type: new GraphQLList(MovieType),
             resolve(parent, args){
+                console.log('resolving1');
                 return Movies.find();
             }
         },
@@ -221,6 +222,7 @@ const Mutation = new GraphQLObjectType({
                 cast: new GraphQLList(CastMemberType)
             },
             resolve(parent, args){
+                console.log('resolving2');
                 const { 
                     title,
                     bgImageUrl,
