@@ -147,4 +147,20 @@ div.showtime{
         height: 55px;
     }
 
+    div.open hr:first-of-type{
+        transform: rotate(45deg);
+        position: relative;
+        top: 7.5px;
+    }
+    
+    div.open hr:nth-of-type(2){
+        border-width: 0;
+    }
+    
+    div.open hr:last-of-type{
+        transform: rotate(-45deg);
+        position: relative;
+        top: -7.5px;
+    }
+
 }

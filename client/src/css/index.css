@@ -223,6 +223,10 @@ input:focus , textarea:focus{
     .slashed-card-info form input[type = "submit"] {
         margin-left: -13px;
     }
+
+    .hipstar-rating{
+        letter-spacing: 5px;        
+    }
 }
 
 @media screen and (max-width: 662px){

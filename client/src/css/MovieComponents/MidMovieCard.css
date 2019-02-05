@@ -3,11 +3,6 @@
     transition: all .3s linear;
 }
 
-.mid-movie-card-wrapper:hover{
-    transform: scale(1.05);
-    transition: all .3s linear;
-}
-
 .mid-movie-card-wrapper:hover .mid-movie-card-info p {
     border-bottom: 1px solid #ED254E;
 }
